@@ -39,14 +39,14 @@
         }
 
         h2 {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Add some space below the h2 */
         }
 
         p {
-            margin-top: 10px;
+            margin-top: 10px; /* Add some space above the p */
         }
 
-        /* Christmas Tree Icon Styling */
+                /* Christmas Tree Icon Styling */
         .enigma-list a {
             font-size: 20px;
             display: block;
@@ -64,12 +64,10 @@
             color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
         .enigma-list {
             list-style-type: none;
             padding: 0;
         }
-
         .enigma-list li {
             margin: 10px 0;
         }
@@ -81,7 +79,6 @@
             padding: 20px;
             border-radius: 8px;
         }
-
         input {
             padding: 5px;
             margin: 10px;
@@ -154,27 +151,28 @@
 
         /* The cards */
         #the_card {
-            text-align: center;
-            margin-top: 30px;
+            text-align: center; /* Align content to the center */
+            margin-top: 30px; /* Add some spacing from the top */
         }
 
+        /* Ensure the heading and paragraph behave as block elements */
         h2 {
-            margin-bottom: 20px;
-            display: block;
+            margin-bottom: 20px; /* Add spacing between the heading and the paragraph */
+            display: block;      /* Ensure block formatting */
         }
 
         p {
-            margin-top: 10px;
-            display: block;
+            margin-top: 10px; /* Add some spacing above the paragraph */
+            display: block;   /* Ensure block formatting */
         }
 
         /* Flexbox layout for the cards */
         .cards-wrapper {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 20px; /* Space between cards */
+            flex-wrap: wrap; /* Allow wrapping of cards if the screen is small */
+            margin-top: 20px; /* Space between the heading and the cards */
         }
 
         .card-container {
@@ -194,7 +192,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Stack the content vertically */
         }
 
         .card:hover {
@@ -211,17 +209,18 @@
         }
 
         .card-discovery {
-            background-color: #4CAF50;
+            background-color: #4CAF50; 
         }
 
         .card-sport {
-            background-color: #1E90FF;
+            background-color: #1E90FF; 
         }
 
         .card-exploration {
-            background-color: #ff4b1e;
+            background-color: #ff4b1e; 
         }
 
+        /* Body of the card */
         .card-body {
             padding: 20px;
             font-size: 16px;
@@ -268,7 +267,7 @@
             text-align: center;
             font-size: 14px;
         }
-
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
@@ -323,50 +322,172 @@
         <p id="enigmas_count">Enigmas left: <span id="remaining-enigmas">3</span></p>
     </header>
 
-    <div id="the_modals">
-        <!-- Enigma links, modals, etc. go here -->
+    <div id="the_modals">  
+
+        <ul class="enigma-list">
+            <li><a href="#" id="link1" onclick="openModal(1)">🎄 Enigma of the Lost Star</a></li>
+            <li><a href="#" id="link2" onclick="openModal(2)">❄️ Riddle of the Frosty Trail</a></li>
+            <li><a href="#" id="link3" onclick="openModal(3)">🎁 Mystery of the Gift Keeper</a></li>
+        </ul>
+
+        <!-- The Modals -->
+        
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal(1)">&times;</span>
+                <h2>Enigma 1: The Missing Letter</h2>
+                <p>Find the next letter in the sequence: A, E, I, M, ...?</p>
+                <input type="text" id="answer1" placeholder="Your answer">
+                <button onclick="checkAnswer(1, 'q')">Submit</button>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal(2)">&times;</span>
+                <h2>Enigma 2: Number Puzzle</h2>
+                <p>What comes next? 2, 4, 8, 16, ...?</p>
+                <input type="text" id="answer2" placeholder="Your answer">
+                <button onclick="checkAnswer(2, '32')">Submit</button>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal(3)">&times;</span>
+                <h2>Enigma 3: Final Riddle</h2>
+                <p>I’m tall when I’m young, and short when I’m old. What am I?</p>
+                <input type="text" id="answer3" placeholder="Your answer">
+                <button onclick="checkAnswer(3, 'candle')">Submit</button>
+            </div>
+        </div>
+
     </div>
 
     <div id="the_card" class="card-container hidden">
         <!-- Gift Message -->
         <h2>Ton cadeau: un parcours de spéléologie avec ton super Secret Santa.</h2>
 
+    
+        <!-- Cards Wrapper -->
         <div class="cards-wrapper">
-            <div class="card">
+
+            <!-- Card 1 -->
+            <div class="card ">
                 <div class="card-header card-discovery">
                     <h3>Niveau Découverte</h3>
                 </div>
                 <div class="card-body">
-                    <p>Le niveau découverte est adapté pour tout le monde, y compris les plus jeunes...</p>
+                    <p>Le niveau découverte est adapté pour tout le monde y compris les plus jeunes. 
+                        Les grottes sont majoritairement horizontales. 
+                        La présence de quelques puits d’environ 5m est possible mais non obligatoire. 
+                        Leur descente s’effectue avec un baudrier et un descendeur et leur remontée se fait par une main courante ou une escalade facile. 
+                        L’activité se déroule sur une demi-journée pendant environ 3h00</p>
                 </div>
             </div>
-
-            <div class="card">
+        
+            <!-- Card 2 -->
+            <div class="card ">
                 <div class="card-header card-sport">
-                    <h3>Niveau Sport</h3>
+                    <h3>Niveau Sportif</h3>
                 </div>
                 <div class="card-body">
-                    <p>Ce niveau vous permettra de découvrir de nouveaux horizons, tout en restant actif et sportif...</p>
+                    <p>Le niveau sportif est réservé à des personnes sportives mais qui peuvent être débutantes. 
+                        La grotte contient le plus souvent des obstacles verticaux a descendre et à remonter aux bloqueurs. 
+                        Connaitre ces techniques n’est pas obligatoire, mais c’est un plus. 
+                        Certaines grottes aquatiques nécessitent une combinaison néoprène. 
+                        L’activité se déroule sur une journée pour une durée entre 5h00 et 8h00</p>
                 </div>
             </div>
-
+        
+            <!-- Card 3 -->
             <div class="card">
                 <div class="card-header card-exploration">
                     <h3>Niveau Exploration</h3>
                 </div>
                 <div class="card-body">
-                    <p>Explorez des endroits inaccessibles dans des paysages magnifiques...</p>
+                    <p>Le niveau Exploration est réservé aux personnes autonomes sur cordes ou ayant déjà pratiqué la spéléologie sportive. 
+                        Les grottes sont majoritairement verticales avec des puits pouvant atteindre plus de 30m de profondeur. 
+                        L’activité se déroule sur une grosse journée pendant plus de 6h00</p>
                 </div>
             </div>
         </div>
+        <p>Contacter l'agence Secret Santa pour définir une date et la difficulté choisie.</p>
     </div>
 
-    <footer>
-        <p>Created by Secret Santa Team</p>
-    </footer>
-
+....
     <script>
-        // Additional JS if necessary
+        let enigmasLeft = 3;
+        let answers = ["q", "32", "candle"];
+
+        // Disable the link to prevent modal from opening
+        function disableLink(enigmaNumber) {
+            document.getElementById(`link${enigmaNumber}`).onclick = function(event) {
+                event.preventDefault(); // Prevent modal from opening
+            };
+            document.getElementById(`link${enigmaNumber}`).style.color = '#ccc'; // Change link color to indicate it's disabled
+        }
+
+        // Enable the link to allow modal to open again
+        function enableLink(enigmaNumber) {
+            document.getElementById(`link${enigmaNumber}`).onclick = function() {
+                openModal(enigmaNumber);
+            };
+            document.getElementById(`link${enigmaNumber}`).style.color = ''; // Restore original color
+        }
+
+        function openModal(enigmaNumber) {
+            document.getElementById(`modal${enigmaNumber}`).style.display = "block";
+        }
+
+        function closeModal(enigmaNumber) {
+            document.getElementById(`modal${enigmaNumber}`).style.display = "none";
+        }
+
+        function checkAnswer(enigmaNumber, correctAnswer) {
+            const userAnswer = document.getElementById(`answer${enigmaNumber}`).value.toLowerCase().trim();
+            if (userAnswer === correctAnswer) {
+                closeModal(enigmaNumber);
+                alert(`🎉 Correct! Enigma ${enigmaNumber} solved!`);
+                document.getElementById(`modal${enigmaNumber}`).classList.add('resolved');
+                document.getElementById(`answer${enigmaNumber}`).disabled = true;
+                document.querySelector(`#modal${enigmaNumber} button`).disabled = true;
+                enigmasLeft--;
+                document.getElementById("remaining-enigmas").textContent = enigmasLeft;
+
+                // Disable the link after the enigma is solved
+                disableLink(enigmaNumber);
+
+                if (enigmasLeft <= 0) {
+                    // now we have to implement the new voucher to be seen ...
+                    document.getElementById('enigmas_count').classList.add('hidden');
+                    document.getElementById('the_modals').classList.add('hidden');
+                    document.getElementById('the_card').classList.remove('hidden');
+                }
+
+            } else {
+                alert("❌ '" + userAnswer + "' is Wrong! Try again!");
+            }
+        }
+
+        //christmas snowflakes:
+        const snowflakes = document.createElement('div');
+        snowflakes.classList.add('snowflakes');
+        document.body.appendChild(snowflakes);
+
+        // Create 50 snowflakes
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflakes.appendChild(snowflake);
+            
+            // Randomize snowflake position and size
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Randomize falling speed
+            snowflake.style.animationDelay = `${Math.random() * 5}s`; // Randomize delay
+            snowflake.style.width = `${Math.random() * 5 + 5}px`;
+            snowflake.style.height = snowflake.style.width;
+        }
     </script>
 </body>
 </html>
